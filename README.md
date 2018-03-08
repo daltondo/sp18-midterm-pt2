@@ -1,3 +1,5 @@
+Partner: Julian Cervantes
+
 # Midterm Part 2, Frontend  Code
 
 We've already setup the infastructure for you. You just need to implement a couple of methods that will be used to 1) log events that we will generate by interacting with the truffle console, and 2) send ether to our multi-sig wallet contract using our local web3. 
