@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
-import MultiSigWallet from '../build/contracts/MultiSigWallet.json'
-import getWeb3 from './utils/getWeb3'
+import React, { Component } from 'react';
+import MultiSigWallet from '../build/contracts/MultiSigWallet.json';
+import getWeb3 from './utils/getWeb3';
 
-import './css/oswald.css'
-import './css/open-sans.css'
-import './css/pure-min.css'
-import './App.css'
+import './css/oswald.css';
+import './css/open-sans.css';
+import './css/pure-min.css';
+import './App.css';
 
 class App extends Component {
   constructor(props) {
@@ -77,6 +77,9 @@ class App extends Component {
         /// list of events we are tracking in the state object. REMEMBER TO USE 'that'
         /// instead of 'this'. You can use 'that.state.item' to access 'item' from the state
         /// and 'that.setState({item: value})' to reset the value of 'item' to 'value'
+
+        console.log(result.event);
+        this.setState({ events: [...this.state.events, result.event]});
       }
     })
 
@@ -85,6 +88,8 @@ class App extends Component {
         console.log(error);
       } else {
         /// YOUR CODE HERE -- same instructions as above
+        console.log(result.event);
+        this.setState({ events: [...this.state.events, result.event]});
       }
     })
 
@@ -93,6 +98,8 @@ class App extends Component {
         console.log(error);
       } else {
         /// YOUR CODE HERE -- same instructions as above
+        console.log(result.event);
+        this.setState({ events: [...this.state.events, result.event]});
       }
     })
 
@@ -101,6 +108,8 @@ class App extends Component {
         console.log(error);
       } else {
         /// YOUR CODE HERE -- same instructions as above
+        console.log(result.event);
+        this.setState({ events: [...this.state.events, result.event]});
       }
     })
   }
@@ -111,6 +120,7 @@ class App extends Component {
   /// function, which is documented here -- https://github.com/ethereum/wiki/wiki/JavaScript-API#web3ethsendtransaction
   sendEther() {
     /// YOUR CODE HERE. This should only be 1 line.
+    this.state.web3.eth.sendTransaction({from: this.state.multiSigContract.address});
   }
 
   render() {
